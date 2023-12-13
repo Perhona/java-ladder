@@ -15,7 +15,7 @@ public class Users {
 
     User getUser(String name) {
         Optional<User> optional = users.stream()
-                .filter(user -> user.getName().equals(name))
+                .filter(user -> user.matchName(name))
                 .findFirst();
         return optional.orElse(DEFAULT_USER);
     }

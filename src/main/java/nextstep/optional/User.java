@@ -24,14 +24,11 @@ public class User {
     }
 
     public static boolean ageIsInRange1(User user) {
-        boolean isInRange = false;
+        return user != null && user.getAge() != null && inRange(user);
+    }
 
-        if (user != null && user.getAge() != null
-                && (user.getAge() >= 30
-                && user.getAge() <= 45)) {
-            isInRange = true;
-        }
-        return isInRange;
+    private static boolean inRange(User user) {
+        return user.getAge() >= 30 && user.getAge() <= 45;
     }
 
     public static boolean ageIsInRange2(User user) {
